@@ -1,0 +1,9 @@
+version: '3.8'
+
+services:
+  aicos-landing:
+    build: .
+    container_name: aicos-landing-gemini
+    restart: always
+    ports:
+      - "8088:80"
