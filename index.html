@@ -6,9 +6,7 @@
   <title>AI COS — From Intelligence to Execution</title>
   <meta name="description" content="AI COS builds specialized AI systems that understand real work, execute it and deliver measurable outcomes.">
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232563eb'/><text x='50%' y='65%' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'>A</text></svg>">
-  <!-- Tailwind CSS CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Lucide Icons -->
   <script src="https://unpkg.com/lucide@latest"></script>
   <script>
     tailwind.config = {
@@ -50,7 +48,7 @@
 </head>
 <body class="bg-brand-950 text-slate-200 font-sans antialiased selection:bg-blue-600 selection:text-white">
 
-  <!-- HEADER / NAVIGATION -->
+  <!-- HEADER -->
   <header class="fixed top-0 left-0 right-0 z-50 glass-card border-b border-white/5 bg-brand-950/85">
     <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
       <!-- LOGO -->
@@ -64,17 +62,16 @@
         </div>
       </a>
 
-      <!-- NAV LINKS -->
-      <nav class="hidden lg:flex items-center gap-7 text-sm font-medium text-slate-300">
+      <!-- NAVIGATION -->
+      <nav class="hidden lg:flex items-center gap-8 text-sm font-medium text-slate-300">
         <a href="#products" data-i18n="nav_products" class="hover:text-white transition-colors">Products</a>
         <a href="#philosophy" data-i18n="nav_philosophy" class="hover:text-white transition-colors">Philosophy</a>
         <a href="#proof" data-i18n="nav_proof" class="hover:text-white transition-colors">Proof</a>
         <a href="#about" data-i18n="nav_about" class="hover:text-white transition-colors">About</a>
-        <a href="#invest" data-i18n="btn_invest" class="text-emerald-400 hover:text-emerald-300 transition-colors font-semibold">Invest in AI COS</a>
         <a href="#contact" data-i18n="nav_contact" class="hover:text-white transition-colors">Contact</a>
       </nav>
 
-      <!-- RIGHT: LANGUAGE & ACTIONS -->
+      <!-- RIGHT: LANGUAGE & SINGLE INVEST CTA -->
       <div class="flex items-center gap-3">
         <!-- 25 Language Selector -->
         <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-slate-900 border border-slate-700/60 text-slate-300 text-xs rounded-lg px-2.5 py-1.5 focus:outline-none focus:border-blue-500 cursor-pointer">
@@ -105,21 +102,22 @@
           <option value="el">Ελληνικά</option>
         </select>
 
-        <a href="#invest" data-i18n="btn_invest" class="hidden sm:inline-flex items-center justify-center px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-emerald-500/40 bg-emerald-950/30 text-emerald-400 hover:bg-emerald-900/40 transition-all font-mono">
+        <!-- SINGLE INVEST CTA IN HEADER -->
+        <a href="#invest" data-i18n="btn_invest" class="inline-flex items-center justify-center px-3.5 py-1.5 text-xs font-semibold rounded-lg border border-emerald-500/40 bg-emerald-950/40 text-emerald-400 hover:bg-emerald-900/50 transition-all font-mono">
           Invest in AI COS
         </a>
 
-        <a href="#contact" data-i18n="btn_access" class="inline-flex items-center justify-center px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-md shadow-blue-600/20 font-mono">
-          Request Access
+        <!-- REQUEST DEMO CTA -->
+        <a href="#contact" data-i18n="btn_demo" class="inline-flex items-center justify-center px-3.5 py-1.5 text-xs font-semibold rounded-lg bg-blue-600 hover:bg-blue-500 text-white transition-all shadow-md shadow-blue-600/20 font-mono">
+          Request Demo
         </a>
       </div>
     </div>
   </header>
 
-  <!-- HERO SECTION -->
+  <!-- HERO -->
   <section id="home" class="relative pt-36 pb-24 hero-glow border-b border-white/5">
     <div class="max-w-5xl mx-auto px-6 text-center">
-      <!-- Badge -->
       <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-blue-500/30 bg-blue-950/40 text-blue-400 text-xs font-mono mb-8">
         <span class="w-1.5 h-1.5 rounded-full bg-blue-400 animate-pulse"></span>
         <span data-i18n="hero_badge">ENTERPRISE EXECUTION SYSTEMS</span>
@@ -133,7 +131,6 @@
         We build specialized AI systems that don't just answer questions. They understand the work, execute it and deliver measurable outcomes.
       </p>
 
-      <!-- CTA Buttons -->
       <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-14">
         <a href="#products" data-i18n="hero_cta" class="w-full sm:w-auto px-8 py-3.5 rounded-lg bg-white text-slate-950 font-semibold text-sm hover:bg-slate-200 transition-all shadow-lg shadow-white/5 font-mono">
           Explore Our Products
@@ -141,12 +138,8 @@
         <a href="#philosophy" data-i18n="hero_secondary_cta" class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 font-semibold text-sm hover:bg-slate-800 transition-all font-mono">
           How It Works
         </a>
-        <a href="#invest" data-i18n="btn_invest" class="w-full sm:w-auto px-8 py-3.5 rounded-lg border border-emerald-500/40 bg-emerald-950/40 text-emerald-400 font-semibold text-sm hover:bg-emerald-900/50 transition-all font-mono">
-          Invest in AI COS
-        </a>
       </div>
 
-      <!-- Core 4 Products Header Bar -->
       <div class="pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs sm:text-sm font-mono text-slate-400">
         <a href="#help-center" class="hover:text-blue-400 transition-colors">Help Center</a>
         <span class="text-slate-700">·</span>
@@ -159,7 +152,7 @@
     </div>
   </section>
 
-  <!-- WHY AI COS? (THE THESIS) -->
+  <!-- THESIS -->
   <section class="py-24 border-b border-white/5 bg-slate-950/40">
     <div class="max-w-7xl mx-auto px-6">
       <div class="max-w-3xl mb-16">
@@ -168,11 +161,11 @@
           AI can answer. We make it work.
         </h2>
         <p data-i18n="thesis_desc" class="text-slate-400 leading-relaxed text-sm sm:text-base">
-          Most modern generative AI provides suggestions, advice, or synthetic text. AI COS replaces conversational handoffs with closed-loop autonomous execution.
+          Most modern generative AI provides suggestions, advice, or synthetic text. AI COS replaces conversational handoffs with direct, autonomous task completion.
         </p>
       </div>
 
-      <!-- 5-Stage Execution Flow -->
+      <!-- 5-STAGE PIPELINE -->
       <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mb-16 text-center font-mono text-xs">
         <div class="glass-card p-4 rounded-lg border-blue-500/20">
           <div class="text-blue-400 font-bold mb-1">01</div>
@@ -196,29 +189,29 @@
         </div>
       </div>
 
-      <!-- Comparison Grid -->
+      <!-- COMPARISON -->
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="glass-card p-8 rounded-xl">
-          <div class="text-xs font-mono text-slate-500 uppercase mb-4">Conversational Model</div>
-          <h3 class="text-base font-semibold text-slate-300 mb-3">Tells you how to solve</h3>
-          <p class="text-xs text-slate-400 leading-relaxed font-mono">
-            Outputs text guides on how to install devices, design electrical topologies, or lower expenditure. Leaves execution burden entirely on humans.
+          <div data-i18n="card_conv_label" class="text-xs font-mono text-slate-500 uppercase mb-4">Conversational Model</div>
+          <h3 data-i18n="card_conv_title" class="text-base font-semibold text-slate-300 mb-3">Tells you how to solve</h3>
+          <p data-i18n="card_conv_desc" class="text-xs text-slate-400 leading-relaxed font-mono">
+            Outputs text guides on how to install devices, design technical topologies, or lower costs. Leaves the actual execution entirely on human teams.
           </p>
         </div>
 
         <div class="glass-card p-8 rounded-xl border-blue-500/30 bg-blue-950/10">
-          <div class="text-xs font-mono text-blue-400 uppercase mb-4">AI COS Execution Engine</div>
-          <h3 class="text-base font-semibold text-white mb-3">Executes the actual task</h3>
-          <p class="text-xs text-slate-300 leading-relaxed font-mono">
-            Interacts directly with operating systems, engineering tools, and company data. Discovers, executes, verifies, and delivers without conversational friction.
+          <div data-i18n="card_aicos_label" class="text-xs font-mono text-blue-400 uppercase mb-4">AI COS Execution Engine</div>
+          <h3 data-i18n="card_aicos_title" class="text-base font-semibold text-white mb-3">Completes the actual task</h3>
+          <p data-i18n="card_aicos_desc" class="text-xs text-slate-300 leading-relaxed font-mono">
+            Interacts directly with operating systems, engineering tools, and data. Diagnoses, acts, verifies, and delivers without conversational friction.
           </p>
         </div>
 
         <div class="glass-card p-8 rounded-xl">
-          <div class="text-xs font-mono text-emerald-500 uppercase mb-4">Accountability</div>
-          <h3 class="text-base font-semibold text-slate-300 mb-3">Auditable Output</h3>
-          <p class="text-xs text-slate-400 leading-relaxed font-mono">
-            Every step is deterministic. The system doesn't assume completion; it validates outputs through physical tests, mathematical checks, and audit logs.
+          <div data-i18n="card_verif_label" class="text-xs font-mono text-emerald-500 uppercase mb-4">Accountability</div>
+          <h3 data-i18n="card_verif_title" class="text-base font-semibold text-slate-300 mb-3">Auditable Output</h3>
+          <p data-i18n="card_verif_desc" class="text-xs text-slate-400 leading-relaxed font-mono">
+            The system validates completions through practical system tests, technical checks, and audit logs rather than assuming success.
           </p>
         </div>
       </div>
@@ -237,7 +230,7 @@
             <h4 data-i18n="pillar_workforce_title" class="text-base font-semibold text-white mb-1">Digital Workforce</h4>
             <p class="text-xs text-blue-400 font-mono mb-2">Help Center</p>
             <p data-i18n="pillar_workforce_desc" class="text-xs text-slate-400 leading-relaxed font-mono">
-              AI operating directly on physical and virtual endpoints, executing real system commands inside enterprise boundaries.
+              AI operating directly on physical and virtual endpoints, executing real system commands within enterprise boundaries.
             </p>
           </div>
         </div>
@@ -263,7 +256,7 @@
             <h4 data-i18n="pillar_financial_title" class="text-base font-semibold text-white mb-1">Financial Intelligence</h4>
             <p class="text-xs text-emerald-400 font-mono mb-2">Cost Saving · How Much</p>
             <p data-i18n="pillar_financial_desc" class="text-xs text-slate-400 leading-relaxed font-mono">
-              Analyzing operational datasets to uncover validated financial waste, fair market valuation, and actionable bottom-line returns.
+              Analyzing operational datasets to uncover validated cost reduction opportunities and fair market value intelligence.
             </p>
           </div>
         </div>
@@ -287,7 +280,7 @@
       </div>
 
       <div class="space-y-12">
-        <!-- 1. HELP CENTER (Primary) -->
+        <!-- 1. HELP CENTER -->
         <div id="help-center" class="glass-card rounded-2xl p-8 sm:p-12 border border-white/10 hover:border-blue-500/40 transition-all">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div class="lg:col-span-7">
@@ -297,51 +290,49 @@
               <h3 class="text-2xl sm:text-3xl font-bold text-white mb-1">Help Center</h3>
               <p data-i18n="hc_sub" class="text-base text-slate-300 font-medium mb-4">Your Digital IT Employee</p>
               <p data-i18n="hc_desc" class="text-xs sm:text-sm text-slate-400 leading-relaxed mb-6 font-mono">
-                Help Center turns IT support from conversation into execution. Instead of delivering scripted manuals, it acts directly on endpoints under role-based authorization to fix hardware, network, and system issues.
+                Help Center turns IT support from conversation into execution. Instead of delivering manuals, it acts directly on endpoints under role-based authorization to fix hardware, network, and system issues.
               </p>
 
-              <!-- Execution Pipeline -->
               <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-300 mb-8 bg-slate-900/80 p-3 rounded-lg border border-white/5">
-                <span class="text-blue-400 font-semibold">Diagnose</span>
+                <span data-i18n="step_understand" class="text-blue-400 font-semibold">Diagnose</span>
                 <span class="text-slate-600">→</span>
                 <span>Permission</span>
                 <span class="text-slate-600">→</span>
-                <span class="text-blue-400 font-semibold">Action</span>
+                <span data-i18n="step_execute" class="text-blue-400 font-semibold">Action</span>
                 <span class="text-slate-600">→</span>
-                <span>Verification</span>
+                <span data-i18n="step_verify">Verification</span>
                 <span class="text-slate-600">→</span>
-                <span class="text-emerald-400 font-semibold">Resolution</span>
+                <span data-i18n="step_deliver" class="text-emerald-400 font-semibold">Resolution</span>
               </div>
 
-              <!-- Real Capabilities -->
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 font-mono">
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Printer Configuration</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Wi-Fi & Network Setup</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> VPN Connectivity</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Microsoft 365 Operations</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Windows / macOS Native</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> User Onboarding & Offboarding</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> Password & Access Operations</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_1">Printer Configuration</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_2">Wi-Fi & Network Setup</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_3">VPN Connectivity</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_4">Microsoft 365 Operations</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_5">Windows / macOS Native</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_6">User Onboarding & Offboarding</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-blue-400"></i> <span data-i18n="hc_cap_7">Password & Access Operations</span></div>
               </div>
             </div>
 
-            <!-- Terminal Mockup -->
+            <!-- TERMINAL -->
             <div class="lg:col-span-5 bg-slate-950 rounded-xl p-5 border border-slate-800 font-mono text-[11px] leading-relaxed text-slate-400">
               <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3 text-slate-500">
-                <span>helpcenter-daemon // endpoint-action</span>
+                <span data-i18n="hc_mock_header">helpcenter-daemon // endpoint-action</span>
                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
               </div>
-              <p class="text-blue-400">[INPUT] User reports local printer offline</p>
-              <p class="text-slate-500">→ Analyzing spooler service state</p>
-              <p class="text-slate-500">→ Resolving driver port & IP binding</p>
-              <p class="text-slate-500">→ Re-initializing network printing protocol</p>
-              <p class="text-emerald-400">→ Dispatching physical test print sheet</p>
-              <p class="text-slate-300 mt-2">[RESULT] Verified. Execution complete.</p>
+              <p data-i18n="hc_mock_input" class="text-blue-400">[INPUT] User reports local printer offline</p>
+              <p data-i18n="hc_mock_step1" class="text-slate-500">→ Analyzing spooler service state</p>
+              <p data-i18n="hc_mock_step2" class="text-slate-500">→ Resolving driver port & IP binding</p>
+              <p data-i18n="hc_mock_step3" class="text-slate-500">→ Re-initializing network printing protocol</p>
+              <p data-i18n="hc_mock_step4" class="text-emerald-400">→ Dispatching physical test print sheet</p>
+              <p data-i18n="hc_mock_result" class="text-slate-300 mt-2">[RESULT] Verified. Execution complete.</p>
             </div>
           </div>
         </div>
 
-        <!-- 2. DATA CENTRE (Primary) -->
+        <!-- 2. DATA CENTRE -->
         <div id="data-centre" class="glass-card rounded-2xl p-8 sm:p-12 border border-white/10 hover:border-indigo-500/40 transition-all">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div class="lg:col-span-7">
@@ -354,36 +345,35 @@
                 Consolidating weeks of technical design and commercial estimation into a single AI environment. Ingests tender documents to configure multi-brand solutions, calculate bill of materials, and output commercial proposals with CAD layouts.
               </p>
 
-              <!-- Real Capabilities -->
               <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-300 font-mono mb-6">
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Specification Analysis</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Proposal Generation</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Multi-brand Configuration</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> 3 Alternative Solutions</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Cost Calculation</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Technical Documentation</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> AutoCAD Drawing</div>
-                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> Multilingual Output</div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_1">Specification Analysis</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_2">Proposal Generation</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_3">Multi-brand Configuration</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_4">3 Alternative Solutions</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_5">Cost Calculation</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_6">Technical Documentation</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_7">AutoCAD Drawing</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_8">Multilingual Output</span></div>
               </div>
             </div>
 
-            <!-- Terminal Mockup -->
+            <!-- TERMINAL -->
             <div class="lg:col-span-5 bg-slate-950 rounded-xl p-5 border border-slate-800 font-mono text-[11px] leading-relaxed text-slate-400">
               <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3 text-slate-500">
-                <span>dc-engine // specification-pipeline</span>
-                <span class="text-indigo-400">STANDARDS COMPLIANT</span>
+                <span data-i18n="dc_mock_header">dc-engine // specification-pipeline</span>
+                <span data-i18n="dc_mock_badge" class="text-indigo-400">STANDARDS COMPLIANT</span>
               </div>
-              <p class="text-indigo-400">[INGEST] Tender Specification Document</p>
-              <p class="text-slate-500">→ Technical load and cooling analysis</p>
-              <p class="text-slate-500">→ Multi-brand vendor equipment matching</p>
-              <p class="text-slate-500">→ 3 Alternative architectural solutions formulated</p>
-              <p class="text-emerald-400">→ Generating Bill of Materials & AutoCAD DWG layout</p>
-              <p class="text-slate-300 mt-2">[RESULT] Turnkey technical documentation compiled.</p>
+              <p data-i18n="dc_mock_input" class="text-indigo-400">[INGEST] Tender Specification Document</p>
+              <p data-i18n="dc_mock_step1" class="text-slate-500">→ Technical load and cooling analysis</p>
+              <p data-i18n="dc_mock_step2" class="text-slate-500">→ Multi-brand vendor equipment matching</p>
+              <p data-i18n="dc_mock_step3" class="text-slate-500">→ 3 Alternative architectural solutions formulated</p>
+              <p data-i18n="dc_mock_step4" class="text-emerald-400">→ Generating Bill of Materials & AutoCAD DWG layout</p>
+              <p data-i18n="dc_mock_result" class="text-slate-300 mt-2">[RESULT] Turnkey technical documentation compiled.</p>
             </div>
           </div>
         </div>
 
-        <!-- 3. COST SAVING (Primary) -->
+        <!-- 3. COST SAVING -->
         <div id="cost-saving" class="glass-card rounded-2xl p-8 sm:p-12 border border-white/10 hover:border-emerald-500/40 transition-all">
           <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
             <div class="lg:col-span-7">
@@ -396,36 +386,35 @@
                 Cost Saving analyzes operational and financial datasets to uncover concrete, measurable savings opportunities. Instead of vague advisory tips, it calculates exact bottom-line variance and outputs immediate action plans.
               </p>
 
-              <!-- Step Execution Pipeline -->
               <div class="flex flex-wrap items-center gap-2 text-xs font-mono text-slate-300 mb-8 bg-slate-900/80 p-3 rounded-lg border border-white/5">
-                <span class="text-emerald-400 font-semibold">Data</span>
+                <span data-i18n="cs_step_data" class="text-emerald-400 font-semibold">Data</span>
                 <span class="text-slate-600">→</span>
-                <span>Detection</span>
+                <span data-i18n="cs_step_detection">Detection</span>
                 <span class="text-slate-600">→</span>
-                <span class="text-emerald-400 font-semibold">Validation</span>
+                <span data-i18n="cs_step_validation" class="text-emerald-400 font-semibold">Validation</span>
                 <span class="text-slate-600">→</span>
-                <span>Financial Impact</span>
+                <span data-i18n="cs_step_impact">Financial Impact</span>
                 <span class="text-slate-600">→</span>
-                <span class="text-blue-400 font-semibold">Action</span>
+                <span data-i18n="cs_step_action" class="text-blue-400 font-semibold">Action</span>
               </div>
             </div>
 
-            <!-- Terminal Mockup -->
+            <!-- TERMINAL -->
             <div class="lg:col-span-5 bg-slate-950 rounded-xl p-5 border border-slate-800 font-mono text-[11px] leading-relaxed text-slate-400">
               <div class="flex items-center justify-between pb-3 border-b border-slate-800 mb-3 text-slate-500">
-                <span>cost-saving // operational-audit</span>
-                <span class="text-emerald-400">MEASURABLE</span>
+                <span data-i18n="cs_mock_header">cost-saving // operational-audit</span>
+                <span data-i18n="cs_mock_badge" class="text-emerald-400">MEASURABLE</span>
               </div>
-              <p class="text-emerald-400">[DATA] Ingesting operational expenditure records</p>
-              <p class="text-slate-500">→ Identifying contract deviations & redundant licenses</p>
-              <p class="text-slate-500">→ Deterministic validation of billing variances</p>
-              <p class="text-emerald-400">→ Quantifying exact bottom-line financial impact</p>
-              <p class="text-slate-300 mt-2">[RESULT] Procurement action plan dispatched.</p>
+              <p data-i18n="cs_mock_input" class="text-emerald-400">[DATA] Ingesting operational expenditure records</p>
+              <p data-i18n="cs_mock_step1" class="text-slate-500">→ Identifying contract deviations & redundant licenses</p>
+              <p data-i18n="cs_mock_step2" class="text-slate-500">→ Deterministic validation of billing variances</p>
+              <p data-i18n="cs_mock_step3" class="text-emerald-400">→ Quantifying exact bottom-line financial impact</p>
+              <p data-i18n="cs_mock_result" class="text-slate-300 mt-2">[RESULT] Action plan generated for review.</p>
             </div>
           </div>
         </div>
 
-        <!-- 4. HOW MUCH (Labs / Portfolio Product) -->
+        <!-- 4. HOW MUCH -->
         <div id="how-much" class="glass-card rounded-2xl p-8 border border-white/5 bg-slate-900/30">
           <div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
             <div>
@@ -435,15 +424,15 @@
               <h3 class="text-xl font-bold text-white">How Much</h3>
               <p data-i18n="hm_sub" class="text-sm text-slate-300 font-medium mb-2">Know what it's really worth.</p>
               <p data-i18n="hm_desc" class="text-xs text-slate-400 max-w-2xl leading-relaxed font-mono">
-                Transforms fragmented market data into structured valuation intelligence. Delivers fair-value calculations across commercial real estate, executive compensation, enterprise contracts, and asset acquisitions.
+                Transforms fragmented market data into structured valuation intelligence. Delivers fair-value calculations across commercial real estate, salary benchmarks, enterprise contracts, and asset acquisitions.
               </p>
             </div>
             <div class="flex flex-wrap gap-2 text-xs font-mono text-slate-400">
-              <span class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Property</span>
-              <span class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Salary</span>
-              <span class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Insurance</span>
-              <span class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Contracts</span>
-              <span class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Pricing</span>
+              <span data-i18n="hm_cat_1" class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Property</span>
+              <span data-i18n="hm_cat_2" class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Salary</span>
+              <span data-i18n="hm_cat_3" class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Insurance</span>
+              <span data-i18n="hm_cat_4" class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Contracts</span>
+              <span data-i18n="hm_cat_5" class="px-2.5 py-1 bg-slate-800/80 rounded border border-white/5">Pricing</span>
             </div>
           </div>
         </div>
@@ -451,7 +440,7 @@
     </div>
   </section>
 
-  <!-- UNIFYING PHILOSOPHY SECTION (THE MATRIX) -->
+  <!-- PHILOSOPHY / MATRIX -->
   <section id="philosophy" class="py-24 border-b border-white/5 bg-brand-900/20">
     <div class="max-w-7xl mx-auto px-6">
       <div class="text-center max-w-2xl mx-auto mb-16">
@@ -464,46 +453,45 @@
         </p>
       </div>
 
-      <!-- Execution Matrix Table -->
       <div class="overflow-x-auto">
         <table class="w-full text-left text-xs font-mono border-collapse min-w-[700px]">
           <thead>
             <tr class="border-b border-slate-800 text-slate-500 uppercase">
-              <th class="py-4 px-6">Product</th>
-              <th class="py-4 px-6 text-blue-400">Understand</th>
-              <th class="py-4 px-6 text-indigo-400">Decide</th>
-              <th class="py-4 px-6 text-purple-400">Execute</th>
-              <th class="py-4 px-6 text-emerald-400">Verify</th>
+              <th data-i18n="tbl_col_product" class="py-4 px-6">Product</th>
+              <th data-i18n="tbl_col_understand" class="py-4 px-6 text-blue-400">Understand</th>
+              <th data-i18n="tbl_col_decide" class="py-4 px-6 text-indigo-400">Decide</th>
+              <th data-i18n="tbl_col_execute" class="py-4 px-6 text-purple-400">Execute</th>
+              <th data-i18n="tbl_col_verify" class="py-4 px-6 text-emerald-400">Verify</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-800/60 text-slate-300">
             <tr class="hover:bg-slate-900/40">
               <td class="py-4 px-6 font-bold text-white">Help Center</td>
-              <td class="py-4 px-6">IT Problem Context</td>
-              <td class="py-4 px-6">Resolution Pathway</td>
-              <td class="py-4 px-6 text-purple-300">Endpoint Action</td>
-              <td class="py-4 px-6 text-emerald-400">Real System Test</td>
+              <td data-i18n="tbl_hc_u" class="py-4 px-6">IT Problem Context</td>
+              <td data-i18n="tbl_hc_d" class="py-4 px-6">Resolution Pathway</td>
+              <td data-i18n="tbl_hc_e" class="py-4 px-6 text-purple-300">Endpoint Action</td>
+              <td data-i18n="tbl_hc_v" class="py-4 px-6 text-emerald-400">Real System Test</td>
             </tr>
             <tr class="hover:bg-slate-900/40">
               <td class="py-4 px-6 font-bold text-white">Data Centre</td>
-              <td class="py-4 px-6">Specification Details</td>
-              <td class="py-4 px-6">Engineering Sizing</td>
-              <td class="py-4 px-6 text-purple-300">Proposal & BOQ</td>
-              <td class="py-4 px-6 text-emerald-400">Technical Output & CAD</td>
+              <td data-i18n="tbl_dc_u" class="py-4 px-6">Specification Details</td>
+              <td data-i18n="tbl_dc_d" class="py-4 px-6">Engineering Sizing</td>
+              <td data-i18n="tbl_dc_e" class="py-4 px-6 text-purple-300">Proposal & BOQ</td>
+              <td data-i18n="tbl_dc_v" class="py-4 px-6 text-emerald-400">Technical Output & CAD</td>
             </tr>
             <tr class="hover:bg-slate-900/40">
               <td class="py-4 px-6 font-bold text-white">Cost Saving</td>
-              <td class="py-4 px-6">Operational Data</td>
-              <td class="py-4 px-6">Saving Opportunity</td>
-              <td class="py-4 px-6 text-purple-300">Procurement Action</td>
-              <td class="py-4 px-6 text-emerald-400">Financial Impact Validation</td>
+              <td data-i18n="tbl_cs_u" class="py-4 px-6">Operational Data</td>
+              <td data-i18n="tbl_cs_d" class="py-4 px-6">Saving Opportunity</td>
+              <td data-i18n="tbl_cs_e" class="py-4 px-6 text-purple-300">Implementation Plan</td>
+              <td data-i18n="tbl_cs_v" class="py-4 px-6 text-emerald-400">Financial Impact Validation</td>
             </tr>
             <tr class="hover:bg-slate-900/40">
               <td class="py-4 px-6 font-bold text-white">How Much</td>
-              <td class="py-4 px-6">Market Information</td>
-              <td class="py-4 px-6">Valuation Modeling</td>
-              <td class="py-4 px-6 text-purple-300">Analysis & Benchmark</td>
-              <td class="py-4 px-6 text-emerald-400">Fair Price Verification</td>
+              <td data-i18n="tbl_hm_u" class="py-4 px-6">Market Information</td>
+              <td data-i18n="tbl_hm_d" class="py-4 px-6">Valuation Modeling</td>
+              <td data-i18n="tbl_hm_e" class="py-4 px-6 text-purple-300">Analysis & Benchmark</td>
+              <td data-i18n="tbl_hm_v" class="py-4 px-6 text-emerald-400">Fair Price Verification</td>
             </tr>
           </tbody>
         </table>
@@ -511,7 +499,7 @@
     </div>
   </section>
 
-  <!-- PROOF SECTION (AUDITABLE EXECUTION) -->
+  <!-- PROOF -->
   <section id="proof" class="py-24 border-b border-white/5">
     <div class="max-w-7xl mx-auto px-6">
       <div class="max-w-3xl mb-16">
@@ -527,41 +515,41 @@
       <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
         <div class="glass-card p-6 rounded-xl border border-white/5">
           <div class="text-xs font-mono text-blue-400 mb-2">Help Center</div>
-          <h4 class="text-base font-semibold text-white mb-3">Endpoint Verification</h4>
+          <h4 data-i18n="proof_hc_title" class="text-base font-semibold text-white mb-3">Endpoint Verification</h4>
           <ul class="space-y-2 text-xs text-slate-400 font-mono">
-            <li>• Real endpoint execution</li>
-            <li>• Real printer installation & test print</li>
-            <li>• Windows / macOS native operations</li>
-            <li>• Endpoint network configuration</li>
+            <li data-i18n="proof_hc_1">• Real endpoint execution</li>
+            <li data-i18n="proof_hc_2">• Real printer installation & test print</li>
+            <li data-i18n="proof_hc_3">• Windows / macOS native operations</li>
+            <li data-i18n="proof_hc_4">• Endpoint network configuration</li>
           </ul>
         </div>
 
         <div class="glass-card p-6 rounded-xl border border-white/5">
           <div class="text-xs font-mono text-indigo-400 mb-2">Data Centre</div>
-          <h4 class="text-base font-semibold text-white mb-3">Engineering Deliverables</h4>
+          <h4 data-i18n="proof_dc_title" class="text-base font-semibold text-white mb-3">Engineering Deliverables</h4>
           <ul class="space-y-2 text-xs text-slate-400 font-mono">
-            <li>• Real specification analysis</li>
-            <li>• Multi-brand proposal generation</li>
-            <li>• Bill of Materials & cost calculations</li>
-            <li>• Automated AutoCAD DWG export</li>
+            <li data-i18n="proof_dc_1">• Real specification analysis</li>
+            <li data-i18n="proof_dc_2">• Multi-brand proposal generation</li>
+            <li data-i18n="proof_dc_3">• Bill of Materials & cost calculations</li>
+            <li data-i18n="proof_dc_4">• Automated AutoCAD DWG export</li>
           </ul>
         </div>
 
         <div class="glass-card p-6 rounded-xl border border-white/5">
           <div class="text-xs font-mono text-emerald-400 mb-2">Cost Saving</div>
-          <h4 class="text-base font-semibold text-white mb-3">Auditable Financial Impact</h4>
+          <h4 data-i18n="proof_cs_title" class="text-base font-semibold text-white mb-3">Auditable Financial Impact</h4>
           <ul class="space-y-2 text-xs text-slate-400 font-mono">
-            <li>• Real operational datasets</li>
-            <li>• Detected saving opportunities</li>
-            <li>• Verified bottom-line financial impact</li>
-            <li>• Concrete execution roadmaps</li>
+            <li data-i18n="proof_cs_1">• Real operational datasets</li>
+            <li data-i18n="proof_cs_2">• Detected saving opportunities</li>
+            <li data-i18n="proof_cs_3">• Verified bottom-line financial impact</li>
+            <li data-i18n="proof_cs_4">• Concrete action roadmaps</li>
           </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- INVESTOR RELATIONS (INVEST IN AI COS) -->
+  <!-- INVESTOR RELATIONS -->
   <section id="invest" class="py-24 border-b border-white/5 bg-slate-950/70">
     <div class="max-w-5xl mx-auto px-6">
       <div class="glass-card p-10 sm:p-14 rounded-2xl border border-emerald-500/30 bg-emerald-950/10">
@@ -573,15 +561,15 @@
           Invest in AI COS
         </h2>
         <p data-i18n="invest_desc" class="text-sm sm:text-base text-slate-300 leading-relaxed max-w-2xl mb-8 font-light">
-          We are building an ecosystem of category-defining AI execution platforms. Connect directly with our executive team for strategic partnerships and capital allocation.
+          We are building an ecosystem of category-defining AI execution platforms. Connect directly with our team for strategic partnerships and capital allocation.
         </p>
 
         <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
           <a href="mailto:ridvan@aicos.com.tr?subject=Investment%20Inquiry%20-%20AI%20COS" class="inline-flex items-center justify-center px-6 py-3 rounded-lg bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-xs font-mono uppercase tracking-wider transition-all shadow-lg shadow-emerald-500/20">
-            <span data-i18n="invest_cta">Contact Founders</span>
+            <span data-i18n="invest_cta">Contact Team</span>
             <i data-lucide="arrow-right" class="w-4 h-4 ml-2"></i>
           </a>
-          <a href="#contact" class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 font-semibold text-xs font-mono hover:bg-slate-800 transition-all">
+          <a href="#contact" data-i18n="invest_secondary" class="inline-flex items-center justify-center px-6 py-3 rounded-lg border border-slate-700 bg-slate-900/60 text-slate-300 font-semibold text-xs font-mono hover:bg-slate-800 transition-all">
             Schedule Briefing
           </a>
         </div>
@@ -610,12 +598,12 @@
     </div>
   </section>
 
-  <!-- CONTACT & ACCESS REQUEST -->
+  <!-- CONTACT / DEMO -->
   <section id="contact" class="py-24">
     <div class="max-w-3xl mx-auto px-6">
       <div class="text-center mb-12">
         <h2 data-i18n="contact_title" class="text-3xl font-bold tracking-tight text-white">Initiate Engagement</h2>
-        <p data-i18n="contact_subtitle" class="text-xs sm:text-sm text-slate-400 mt-2 font-mono">Direct access to enterprise engineering and executive leadership.</p>
+        <p data-i18n="contact_subtitle" class="text-xs sm:text-sm text-slate-400 mt-2 font-mono">Direct access to enterprise engineering and leadership.</p>
         <div class="mt-4 inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-900 border border-slate-800 text-xs font-mono text-slate-300">
           <span data-i18n="contact_email_label" class="text-slate-500">Official Inquiries:</span>
           <a href="mailto:ridvan@aicos.com.tr" class="text-blue-400 hover:underline">ridvan@aicos.com.tr</a>
@@ -625,24 +613,24 @@
       <form onsubmit="handleFormSubmit(event)" class="glass-card p-8 rounded-2xl border border-white/10 space-y-5">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
           <div>
-            <label data-i18n="form_email" class="block text-xs font-mono text-slate-400 mb-2">Corporate Email</label>
-            <input type="email" id="contact-email" required placeholder="executive@enterprise.com" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono">
+            <label data-i18n="form_email_label" class="block text-xs font-mono text-slate-400 mb-2">Corporate Email</label>
+            <input type="email" id="contact-email" required data-i18n-placeholder="form_email_placeholder" placeholder="executive@enterprise.com" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono">
           </div>
           <div>
-            <label class="block text-xs font-mono text-slate-400 mb-2">Target Product</label>
+            <label data-i18n="form_product_label" class="block text-xs font-mono text-slate-400 mb-2">Target Product</label>
             <select id="contact-product" class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 cursor-pointer font-mono text-xs">
-              <option value="Help Center">Help Center (IT Infrastructure)</option>
-              <option value="Data Centre">Data Centre (Engineering & Proposals)</option>
-              <option value="Cost Saving">Cost Saving (Financial Intelligence)</option>
-              <option value="How Much">How Much (Valuation Intelligence)</option>
+              <option value="Help Center">Help Center</option>
+              <option value="Data Centre">Data Centre</option>
+              <option value="Cost Saving">Cost Saving</option>
+              <option value="How Much">How Much</option>
               <option value="Investor Relations">Investor Relations (AI COS)</option>
             </select>
           </div>
         </div>
 
         <div>
-          <label data-i18n="form_scope" class="block text-xs font-mono text-slate-400 mb-2">Enterprise Scope / Evaluation Details</label>
-          <textarea id="contact-scope" rows="3" placeholder="Briefly describe your environment or technical evaluation scope..." class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono text-xs"></textarea>
+          <label data-i18n="form_scope_label" class="block text-xs font-mono text-slate-400 mb-2">Enterprise Scope / Evaluation Details</label>
+          <textarea id="contact-scope" rows="3" data-i18n-placeholder="form_scope_placeholder" placeholder="Briefly describe your environment or technical evaluation scope..." class="w-full bg-slate-900 border border-slate-700/80 rounded-lg px-4 py-2.5 text-sm text-white focus:outline-none focus:border-blue-500 font-mono text-xs"></textarea>
         </div>
 
         <button type="submit" data-i18n="form_submit" class="w-full py-3 bg-blue-600 hover:bg-blue-500 text-white font-semibold text-xs rounded-lg transition-all shadow-lg shadow-blue-600/20 font-mono tracking-wider uppercase">
@@ -661,15 +649,13 @@
       </div>
       <div class="flex items-center gap-6">
         <a href="mailto:ridvan@aicos.com.tr" class="hover:text-slate-300 transition-colors">ridvan@aicos.com.tr</a>
-        <span>AI Company Operating System. All Rights Reserved.</span>
+        <span data-i18n="footer_rights">AI Company Operating System. All Rights Reserved.</span>
       </div>
     </div>
   </footer>
 
-  <!-- SCRIPT & DYNAMIC LOCALIZATION -->
   <script src="translations.js"></script>
   <script>
-    // Lucide Icons init
     lucide.createIcons();
 
     function changeLanguage(lang) {
@@ -682,7 +668,13 @@
         }
       });
 
-      // RTL handling (Arabic)
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (selected && selected[key]) {
+          el.setAttribute('placeholder', selected[key]);
+        }
+      });
+
       if (lang === 'ar') {
         document.documentElement.setAttribute('dir', 'rtl');
       } else {
