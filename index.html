@@ -1,238 +1,799 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="tr" class="scroll-smooth">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>AI COS | AI Company Operating System</title>
+  <title>AI COS — İşi Gerçekten Tamamlayan Yapay Zekâ</title>
+  <meta name="description" content="AI COS, soruları yanıtlamakla kalmayan; işi anlayan, uygulayan ve ölçülebilir sonuçlar teslim eden uzmanlaşmış yapay zekâ sistemleri geliştirir.">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%231e293b'/><text x='50%' y='65%' font-size='50' font-weight='bold' fill='white' text-anchor='middle' font-family='sans-serif'>A</text></svg>">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
   <style>
+    :root {
+      --font-main: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    }
     body {
-      background-color: #030712;
-      background-image: 
-        radial-gradient(circle at 50% 0%, rgba(30, 58, 138, 0.28) 0%, transparent 45%),
-        radial-gradient(circle at 50% 40%, rgba(49, 46, 129, 0.18) 0%, transparent 55%),
-        radial-gradient(circle at 50% 80%, rgba(15, 23, 42, 0.35) 0%, transparent 60%);
-      color: #f8fafc;
-      font-family: 'Plus Jakarta Sans', sans-serif;
+      font-family: var(--font-main);
+      background-color: #0b101b;
+      color: #f1f5f9;
       overflow-x: hidden;
     }
-    .glass-card {
-      background: rgba(10, 15, 29, 0.72);
-      border: 1px solid rgba(255, 255, 255, 0.07);
-      backdrop-filter: blur(16px);
-      border-radius: 0.75rem;
+    /* Liquid Atmospheric Aurora Background */
+    .aurora-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      background: 
+        none, transparent 70%),
+        none, transparent 70%),
+        none, transparent 70%),
+        none, transparent 70%),
+        #090d16;
     }
-    .glass-card:hover {
-      border-color: rgba(56, 189, 248, 0.25);
+    /* macOS Frosted Glass & Hairline Borders */
+    .glass-panel {
+      background: rgba(15, 23, 42, 0.55);
+      backdrop-filter: blur(28px);
+      -webkit-backdrop-filter: blur(28px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5), inset 0 1px 0 0 rgba(255, 255, 255, 0.12);
     }
-    .nav-glass {
-      background: rgba(3, 7, 18, 0.85);
-      backdrop-filter: blur(20px);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    .glass-panel:hover {
+      border-color: rgba(255, 255, 255, 0.22);
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6), inset 0 1px 0 0 rgba(255, 255, 255, 0.2);
+    }
+    .glass-nav { background: #070d18 !important; border-bottom: 1px solid rgba(255,255,255,0.08) !important; backdrop-filter: none !important; }
+    .glass-badge {
+      background: rgba(255, 255, 255, 0.06);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255, 255, 255, 0.14);
     }
   </style>
-</head>
-<body class="min-h-screen flex flex-col selection:bg-cyan-500 selection:text-white">
 
-  <!-- NAVBAR -->
-  <header class="fixed top-0 left-0 right-0 z-50 nav-glass">
-    <div class="max-w-7xl mx-auto px-8 h-20 flex items-center justify-between">
-      <!-- Orijinal Metin Logo -->
-      <a href="#" class="flex flex-col">
-        <span class="text-xl font-extrabold tracking-tight text-white leading-none">AI COS</span>
-        <span class="text-[7.5px] tracking-[0.25em] text-slate-400 uppercase font-semibold mt-1">OPERATING SYSTEM</span>
+<style>
+  #proof h2, #proof p[data-i18n="proof_tag"], #proof p[data-i18n="proof_desc"] {
+    text-align: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    display: block !important;
+  }
+  #proof .mb-16 {
+    text-align: center !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 100% !important;
+  }
+  a[data-i18n="btn_demo"] {
+    box-shadow: none !important;
+    filter: none !important;
+    text-shadow: none !important;
+  }
+</style>
+
+</head>
+<body class="antialiased selection:bg-cyan-500/30 selection:text-cyan-200">
+
+  <div class="aurora-bg"></div>
+
+      <!-- HEADER -->
+  <header class="fixed top-0 left-0 right-0 z-50 bg-[#070d18] border-b border-white/10" style="background: #070d18 !important; box-shadow: none !important;">
+    <div class="relative w-full px-8 h-24 flex items-center justify-between">
+      <!-- LOGO (EN SOLDA) -->
+      <a href="#home" class="flex flex-col group z-10">
+        <span class="font-extrabold tracking-tight text-white text-2xl group-hover:text-cyan-400 transition-colors">AI COS</span>
+        <span class="text-[10px] tracking-[0.2em] uppercase text-slate-400 font-semibold">OPERATING SYSTEM</span>
       </a>
 
-      <!-- Menü Linkleri -->
-      <nav class="hidden md:flex items-center gap-8 text-xs font-semibold text-slate-300">
-        <a href="#products" class="hover:text-white transition-colors">Products</a>
-        <a href="#philosophy" class="hover:text-white transition-colors">Philosophy</a>
-        <a href="#proof" class="hover:text-white transition-colors">Proof</a>
-        <a href="#about" class="hover:text-white transition-colors">About</a>
-        <a href="#contact" class="hover:text-white transition-colors">Contact</a>
+      <!-- MENÜ + DEMO BUTONU (SİTENİN TAM ENLEMİNE ORTASINDA KİLİTLİ) -->
+      <nav class="hidden lg:flex items-center gap-8 text-base font-bold text-white absolute left-1/2 -translate-x-1/2">
+        <a href="#products" data-i18n="nav_products" class="text-white hover:text-cyan-400 transition-colors">Ürünler</a>
+        <a href="#philosophy" data-i18n="nav_philosophy" class="text-white hover:text-cyan-400 transition-colors">Felsefemiz</a>
+        <a href="#proof" data-i18n="nav_proof" class="text-white hover:text-cyan-400 transition-colors">Somut Kanıt</a>
+        <a href="#about" data-i18n="nav_about" class="text-white hover:text-cyan-400 transition-colors">Hakkımızda</a>
+        <a href="#contact" data-i18n="nav_contact" class="text-white hover:text-cyan-400 transition-colors">İletişim</a>
+        
+        <a href="#contact" data-i18n="btn_demo" class="ml-4 inline-flex items-center justify-center px-6 py-2.5 text-base font-bold rounded-xl bg-white text-slate-950 hover:bg-slate-200 transition-none" style="box-shadow: none !important; filter: none !important;">
+          Demo Talep Et
+        </a>
       </nav>
 
-      <!-- Sağ Butonlar -->
-      <div class="flex items-center gap-3">
-        <a href="mailto:demo@aicos.com.tr?subject=AI%20COS%20Demo%20Request" class="inline-flex items-center justify-center px-4 py-2 text-xs font-bold rounded-lg bg-white text-slate-950 hover:bg-slate-200 transition-colors shadow-sm">Request Demo</a>
-        <a href="mailto:invest@aicos.com.tr?subject=AI%20COS%20Investment%20Inquiry" class="inline-flex items-center justify-center px-3.5 py-2 text-xs font-bold rounded-lg border border-amber-500/40 text-amber-400 hover:bg-amber-500/10 transition-colors">Invest in AI COS</a>
-        
-        <div class="relative">
-          <select id="langSelect" class="bg-slate-900 border border-slate-700/80 text-slate-300 text-xs font-medium rounded-lg px-2.5 py-1.5 outline-none cursor-pointer focus:border-cyan-400">
-            <option value="en" selected>English (US)</option>
-            <option value="tr">Türkçe (TR)</option>
-            <option value="de">Deutsch (DE)</option>
-          </select>
-        </div>
+      <!-- SAĞ BLOK (EN SAĞDA: YATIRIM BUTONU VE DİL SEÇİCİ) -->
+      <div class="flex items-center gap-3 z-10">
+        <a href="mailto:invest@aicos.com.tr?subject=AI%20COS%20Yat%C4%B1r%C4%B1m%20G%C3%B6r%C3%BC%C5%9Fmesi" data-i18n="btn_invest" class="inline-flex items-center justify-center px-4 py-2 text-sm font-semibold rounded-xl border border-amber-500/40 bg-amber-500/10 text-amber-300 hover:bg-amber-500/20 hover:border-amber-400 transition-all duration-200">
+          Bize Yatırım Yap
+        </a>
+        <select id="lang-select" onchange="changeLanguage(this.value)" class="bg-slate-900/80 border border-white/15 text-slate-200 text-sm font-semibold rounded-xl px-4 py-2.5 focus:outline-none focus:border-cyan-400 cursor-pointer">
+          <option value="tr" selected>Türkçe (TR)</option>
+          <option value="en">English (US)</option>
+          <option value="de">Deutsch</option>
+          <option value="fr">Français</option>
+          <option value="es">Español</option>
+          <option value="it">Italiano</option>
+          <option value="pt">Português</option>
+          <option value="nl">Nederlands</option>
+          <option value="ar">العربية</option>
+          <option value="ja">日本語</option>
+          <option value="ko">한국어</option>
+          <option value="zh_CN">简体中文</option>
+          <option value="ru">Русский</option>
+        </select>
       </div>
     </div>
   </header>
 
   <!-- HERO SECTION -->
-  <section class="pt-44 pb-20 px-6 text-center max-w-4xl mx-auto flex flex-col items-center">
-    <h1 class="text-5xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
-      AI that gets the job done.
-    </h1>
-    <p class="text-sm sm:text-base text-slate-300 mb-10 max-w-2xl leading-relaxed">
-      We build specialized AI systems that don't just answer questions. They understand the work, execute it and deliver measurable outcomes.
-    </p>
+  <section id="home" class="relative pt-44 pb-12 flex flex-col justify-start">
+    <div class="max-w-7xl mx-auto px-6 text-center mt-6">
+      <h1 data-i18n="hero_title" class="text-3xl sm:text-5xl md:text-6xl lg:text-[68px] font-extrabold tracking-tight text-white mb-6 leading-[1.18] mx-auto">
+        <span class="block whitespace-nowrap">Yapay zekâ konuşmayı öğrendi;</span>
+        <span class="block whitespace-nowrap">şimdi iş yapma zamanı.</span>
+      </h1>
 
-    <div class="flex items-center justify-center gap-4">
-      <a href="#products" class="px-5 py-2.5 rounded-lg bg-white text-slate-950 text-xs font-bold hover:bg-slate-200 transition-colors shadow-md">Explore Our Products</a>
-      <a href="#philosophy" class="px-5 py-2.5 rounded-lg border border-slate-700 bg-slate-900/50 text-slate-200 text-xs font-bold hover:bg-slate-800 transition-colors">How It Works</a>
-    </div>
-
-    <!-- Hızlı Ürün Çubuğu -->
-    <div class="mt-20 flex flex-wrap justify-center items-center gap-8 sm:gap-12 text-xs font-semibold text-slate-400">
-      <a href="#products" class="hover:text-cyan-400 transition-colors">Help Center</a>
-      <a href="#products" class="hover:text-cyan-400 transition-colors">Data Centre</a>
-      <a href="#products" class="hover:text-cyan-400 transition-colors">Cost Saving</a>
-      <a href="#products" class="hover:text-cyan-400 transition-colors">How Much</a>
-      <a href="#products" class="hover:text-cyan-400 transition-colors">KGK</a>
-    </div>
-  </section>
-
-  <!-- FELSEFEMİZ -->
-  <section id="philosophy" class="py-24 px-6 border-t border-slate-800/40">
-    <div class="max-w-5xl mx-auto text-center flex flex-col items-center">
-      <p class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold mb-3">TEMEL YAKLAŞIMIMIZ</p>
-      <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 whitespace-nowrap">Yapay zekâ yanıt verir. AI COS işi yapar.</h2>
-      <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-        Günümüz üretken yapay zekâ sistemlerinin çoğu bilgi veya metin önerisi sunar. AI COS, sohbet yerine görevleri doğrudan tamamlayan otonom süreçleri hayata geçirir.
+      <p data-i18n="hero_subtitle" class="text-lg sm:text-xl text-slate-300 max-w-2xl mx-auto mb-8 leading-relaxed font-normal">
+        Yalnızca soruları yanıtlayan değil; işi anlayan, doğrudan uygulayan ve<br class="hidden sm:inline" /> ölçülebilir sonuçlar teslim eden uzmanlaşmış yapay zekâ sistemleri geliştiriyoruz.
       </p>
 
-      <!-- 5 Aşamalı Süreç Barı -->
-      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3 mt-12 w-full max-w-4xl">
-        <div class="glass-card p-4 text-center">
-          <span class="text-[10px] text-cyan-400 block font-mono">01</span>
-          <span class="text-xs font-bold text-white block mt-1">Understand</span>
+      <div class="flex flex-col sm:flex-row items-center justify-center gap-4 mb-28">
+        <a href="#products" data-i18n="hero_cta" class="w-full sm:w-auto px-8 py-3.5 rounded-xl bg-white text-slate-950 font-bold text-sm hover:bg-slate-200 transition-all  ">
+          Ürünlerimizi Keşfedin
+        </a>
+        <a href="#philosophy" data-i18n="hero_secondary_cta" class="w-full sm:w-auto px-8 py-3.5 rounded-xl border border-white/15 bg-white/5 text-white font-semibold text-sm hover:bg-white/10 transition-all backdrop-blur-md">
+          Nasıl Çalışır?
+        </a>
+      </div>
+
+      <!-- YUKARI ÇEKİLEN ÜRÜN ŞERİDİ -->
+      <div class="w-full pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-8 sm:gap-14 text-base sm:text-lg font-bold tracking-wide text-slate-200">
+        <a href="#help-center" class="hover:text-cyan-400 transition-colors">Help Center</a>
+        <span class="text-slate-600">·</span>
+        <a href="#data-centre" class="hover:text-blue-400 transition-colors">Data Centre</a>
+        <span class="text-slate-600">·</span>
+        <a href="#cost-saving" class="hover:text-emerald-400 transition-colors">Cost Saving</a>
+        <span class="text-slate-600">·</span>
+        <a href="#how-much" class="hover:text-purple-400 transition-colors">How Much</a>
+        <span class="text-slate-600">·</span>
+        <a href="#kgk" class="hover:text-amber-400 transition-colors">KGK</a>
+        <span class="text-slate-600">·</span>
+        <a href="#kgk" class="hover:text-amber-400 transition-colors">KGK</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- THESIS -->
+  <section class="py-28 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center max-w-3xl mx-auto flex flex-col items-center justify-center">
+        <p data-i18n="phil_tag" class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-3">TEMEL YAKLAŞIMIMIZ</p>
+        <h2 data-i18n="phil_title" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4 whitespace-nowrap">Yapay zekâ yanıt verir. AI COS işi yapar.</h2>
+        <p data-i18n="phil_desc" class="text-base text-slate-300 mx-auto font-normal leading-relaxed text-center">
+          Günümüz üretken yapay zekâ sistemlerinin çoğu bilgi veya metin önerisi sunar. AI COS, sohbet yerine görevleri doğrudan tamamlayan otonom süreçleri hayata geçirir.
+        </p>
+      </div>
+
+      <!-- 5-STAGE PIPELINE -->
+      <div class="grid grid-cols-2 sm:grid-cols-5 gap-3.5 mb-16 text-center text-xs">
+        <div class="glass-panel p-5 rounded-xl border-cyan-500/20">
+          <div class="text-cyan-400 font-bold mb-1.5">01</div>
+          <div data-i18n="step_understand" class="text-white font-semibold">Anla</div>
         </div>
-        <div class="glass-card p-4 text-center">
-          <span class="text-[10px] text-cyan-400 block font-mono">02</span>
-          <span class="text-xs font-bold text-white block mt-1">Decide</span>
+        <div class="glass-panel p-5 rounded-xl border-blue-500/20">
+          <div class="text-blue-400 font-bold mb-1.5">02</div>
+          <div data-i18n="step_decide" class="text-white font-semibold">Karar Ver</div>
         </div>
-        <div class="glass-card p-4 text-center">
-          <span class="text-[10px] text-cyan-400 block font-mono">03</span>
-          <span class="text-xs font-bold text-white block mt-1">Execute</span>
+        <div class="glass-panel p-5 rounded-xl border-purple-500/20">
+          <div class="text-purple-400 font-bold mb-1.5">03</div>
+          <div data-i18n="step_execute" class="text-white font-semibold">Uygula</div>
         </div>
-        <div class="glass-card p-4 text-center">
-          <span class="text-[10px] text-cyan-400 block font-mono">04</span>
-          <span class="text-xs font-bold text-white block mt-1">Verify</span>
+        <div class="glass-panel p-5 rounded-xl border-emerald-500/20">
+          <div class="text-emerald-400 font-bold mb-1.5">04</div>
+          <div data-i18n="step_verify" class="text-white font-semibold">Doğrula</div>
         </div>
-        <div class="glass-card p-4 text-center col-span-2 sm:col-span-1">
-          <span class="text-[10px] text-cyan-400 block font-mono">05</span>
-          <span class="text-xs font-bold text-white block mt-1">Deliver</span>
+        <div class="glass-panel p-5 rounded-xl border-amber-500/20 col-span-2 sm:col-span-1">
+          <div class="text-amber-400 font-bold mb-1.5">05</div>
+          <div data-i18n="step_deliver" class="text-white font-semibold">Teslim Et</div>
         </div>
       </div>
 
-      <!-- 3 Karşılaştırma Kartı -->
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-5 mt-8 w-full max-w-5xl text-left">
-        <div class="glass-card p-6">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 block mb-2">CONVERSATIONAL MODEL</span>
-          <h4 class="text-sm font-bold text-white mb-2">Tells you how to solve</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Outputs text guides on how to install devices, design technical topologies, or lower costs. Leaves the actual execution entirely on human teams.
+      <!-- COMPARISON -->
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 rounded-2xl">
+          <div data-i18n="card_conv_label" class="text-xs uppercase text-slate-400 mb-4 font-semibold tracking-wider">Sohbet Odaklı Modeller</div>
+          <h3 data-i18n="card_conv_title" class="text-lg font-bold text-white mb-3">Nasıl çözüleceğini anlatır</h3>
+          <p data-i18n="card_conv_desc" class="text-xs leading-relaxed text-slate-300">
+            Yazıcı kurulumu, teknik altyapı tasarımı veya maliyet düşürme hakkında rehber metin üretir. Bütün uygulama yükünü insan ekiplerin üzerine bırakır.
           </p>
         </div>
 
-        <div class="glass-card p-6 border-cyan-500/30 bg-cyan-950/20">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-cyan-400 block mb-2">AI COS EXECUTION ENGINE</span>
-          <h4 class="text-sm font-bold text-white mb-2">Completes the actual task</h4>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            Interacts directly with operating systems, engineering tools, and data. Diagnoses, acts, verifies, and delivers without conversational friction.
+        <div class="glass-panel p-8 rounded-2xl border-cyan-500/30 bg-cyan-950/20">
+          <div data-i18n="card_aicos_label" class="text-xs uppercase text-cyan-400 mb-4 font-bold tracking-wider">AI COS Çözüm Motoru</div>
+          <h3 data-i18n="card_aicos_title" class="text-lg font-bold text-white mb-3">Görevi bizzat tamamlar</h3>
+          <p data-i18n="card_aicos_desc" class="text-xs leading-relaxed text-slate-200">
+            İşletim sistemleri, mühendislik araçları ve kurumsal verilerle doğrudan çalışır. Sorunu tespit eder, çözer, test eder ve sonucu doğrular.
           </p>
         </div>
 
-        <div class="glass-card p-6">
-          <span class="text-[10px] uppercase font-mono tracking-widest text-slate-400 block mb-2">ACCOUNTABILITY</span>
-          <h4 class="text-sm font-bold text-white mb-2">Auditable Output</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            The system validates completions through practical system tests, technical checks, and audit logs rather than assuming success.
+        <div class="glass-panel p-8 rounded-2xl">
+          <div data-i18n="card_verif_label" class="text-xs uppercase text-emerald-400 mb-4 font-semibold tracking-wider">Sorumluluk ve Doğruluk</div>
+          <h3 data-i18n="card_verif_title" class="text-lg font-bold text-white mb-3">Denetlenebilir Çıktı</h3>
+          <p data-i18n="card_verif_desc" class="text-xs leading-relaxed text-slate-300">
+            Sistem işin bittiğini varsaymaz; fiziksel sistem testleri, teknik hesaplamalar ve denetim kayıtlarıyla doğrulanmış sonuç üretir.
           </p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- 5 ÜRÜN KUTUCUĞU -->
-  <section id="proof" class="py-12 px-6">
-    <div class="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-3.5">
-      <!-- 1. Help Center -->
-      <div class="glass-card p-4 text-left flex flex-col justify-between">
-        <div>
-          <div class="w-6 h-6 rounded bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 mb-3 text-xs">🖹</div>
-          <h5 class="text-xs font-bold text-white">Dijital İş Gücü</h5>
-          <span class="text-[10px] text-cyan-400 font-medium block mb-2">Operasyonel Zekâ • Help Center</span>
-          <p class="text-[11px] text-slate-400 leading-snug">Doğrudan fiziksel ve sanal uç noktalarda otonom komut yürüten iş gücü.</p>
+  <!-- CAPABILITY PILLARS (GENİŞLETİLMİŞ ZEKA KATEGORİLERİ) -->
+  <section class="py-24 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-4">
+              <i data-lucide="cpu" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">Dijital İş Gücü</h4>
+            <p class="text-[11px] text-cyan-400 font-semibold mb-2">Operasyonel Zekâ · Help Center</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Doğrudan fiziksel ve sanal uç noktalarda otonom komut yürüten iş gücü.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 2. Data Centre -->
-      <div class="glass-card p-4 text-left flex flex-col justify-between">
-        <div>
-          <div class="w-6 h-6 rounded bg-blue-500/10 border border-blue-500/20 flex items-center justify-center text-blue-400 mb-3 text-xs">🏛</div>
-          <h5 class="text-xs font-bold text-white">Sektörel Zekâ</h5>
-          <span class="text-[10px] text-blue-400 font-medium block mb-2">Mühendislik Zekâsı • Data Centre</span>
-          <p class="text-[11px] text-slate-400 leading-snug">Şartnameleri, ekipman boyutlandırmalarını ve CAD projelerini üreten uzmanlık.</p>
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 mb-4">
+              <i data-lucide="layers" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">Sektörel Zekâ</h4>
+            <p class="text-[11px] text-indigo-400 font-semibold mb-2">Mühendislik Zekâsı · Data Centre</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Şartnameleri, ekipman boyutlandırmalarını ve CAD projelerini üreten uzmanlık.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 3. KGK -->
-      <div class="glass-card p-4 text-left flex flex-col justify-between">
-        <div>
-          <div class="w-6 h-6 rounded bg-amber-500/10 border border-amber-500/20 flex items-center justify-center text-amber-400 mb-3 text-xs">⚡</div>
-          <h5 class="text-xs font-bold text-white">Altyapı Zekâsı</h5>
-          <span class="text-[10px] text-amber-400 font-medium block mb-2">Güç & Süreklilik • KGK</span>
-          <p class="text-[11px] text-slate-400 leading-snug">Kritik güç sistemleri, akü otonomisi ve kesintisiz enerji altyapısı tasarımı.</p>
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 mb-4">
+              <i data-lucide="zap" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">Altyapı Zekâsı</h4>
+            <p class="text-[11px] text-amber-400 font-semibold mb-2">Güç & Süreklilik · KGK</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Kritik güç sistemleri, akü otonomisi ve kesintisiz enerji altyapısı tasarımı.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 4. Cost Saving -->
-      <div class="glass-card p-4 text-left flex flex-col justify-between">
-        <div>
-          <div class="w-6 h-6 rounded bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 mb-3 text-xs">📈</div>
-          <h5 class="text-xs font-bold text-white">Finansal Zekâ</h5>
-          <span class="text-[10px] text-emerald-400 font-medium block mb-2">Karar Zekâsı • Cost Saving</span>
-          <p class="text-[11px] text-slate-400 leading-snug">Harcama verilerini analiz ederek doğrulanmış maliyet tasarrufu ve aksiyon planı.</p>
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-emerald-400 mb-4">
+              <i data-lucide="trending-up" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">Finansal Zekâ</h4>
+            <p class="text-[11px] text-emerald-400 font-semibold mb-2">Karar Zekâsı · Cost Saving</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Harcama verilerini analiz ederek doğrulanmış maliyet tasarrufu ve aksiyon planı.
+            </p>
+          </div>
         </div>
-      </div>
 
-      <!-- 5. How Much -->
-      <div class="glass-card p-4 text-left flex flex-col justify-between">
-        <div>
-          <div class="w-6 h-6 rounded bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 mb-3 text-xs">⚖</div>
-          <h5 class="text-xs font-bold text-white">Değerleme Zekâsı</h5>
-          <span class="text-[10px] text-purple-400 font-medium block mb-2">Piyasa Analitiği • How Much</span>
-          <p class="text-[11px] text-slate-400 leading-snug">Sözleşme, varlık ve gayrimenkul işlemlerinde şeffaf ve adil piyasa değeri tespiti.</p>
+        <div class="glass-panel p-6 rounded-2xl flex flex-col justify-between">
+          <div>
+            <div class="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/30 flex items-center justify-center text-purple-400 mb-4">
+              <i data-lucide="scale" class="w-5 h-5"></i>
+            </div>
+            <h4 class="text-base font-bold text-white mb-1">Değerleme Zekâsı</h4>
+            <p class="text-[11px] text-purple-400 font-semibold mb-2">Piyasa Analitiği · How Much</p>
+            <p class="text-xs text-slate-300 leading-relaxed">
+              Sözleşme, varlık ve gayrimenkul işlemlerinde şeffaf ve adil piyasa değeri tespiti.
+            </p>
+          </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ÜRÜN PORTFÖYÜ BAŞLIĞI -->
-  <section id="products" class="py-24 px-6 text-center max-w-5xl mx-auto flex flex-col items-center">
-    <p class="text-[10px] uppercase tracking-widest text-cyan-400 font-bold mb-3">ÜRÜN PORTFÖYÜ</p>
-    <h2 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Gerçek Operasyonlar İçin Üretildi.</h2>
-    <p class="text-xs sm:text-sm text-slate-300 max-w-2xl mx-auto leading-relaxed">
-      Aynı temel prensip üzerine kurulu bağımsız ürünler: Kapsamlı bağlam analizi, otonom iş yürütme ve somut çıktı teslimi.
-    </p>
+    <!-- PRODUCTS SHOWCASE -->
+  <section id="products" class="py-32 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center max-w-3xl mx-auto flex flex-col items-center justify-center">
+        <p data-i18n="prod_tag" class="text-xs uppercase tracking-widest text-cyan-400 font-bold mb-3">ÜRÜN PORTFÖYÜ</p>
+        <h2 data-i18n="prod_title" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Gerçek Operasyonlar İçin Üretildi.</h2>
+        <p data-i18n="prod_desc" class="text-base text-slate-300 font-normal leading-relaxed text-center">
+          Aynı temel prensip üzerine kurulu bağımsız ürünler: Kapsamlı bağlam analizi, otonom iş yürütme ve somut çıktı teslimi.
+        </p>
+      </div>
+
+      <div class="space-y-12">
+        <!-- 1. HELP CENTER -->
+        <div id="help-center" class="glass-panel rounded-3xl p-8 sm:p-12 transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 text-xs font-semibold mb-4">
+                Dijital IT Destek Personeli
+              </div>
+              <h3 class="text-3xl font-extrabold text-white mb-1">Help Center</h3>
+              <p class="text-base text-cyan-200/90 font-medium mb-4">Dijital IT Personeliniz</p>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                Help Center, BT desteğini konuşma olmaktan çıkarıp doğrudan çözüme dönüştürür. Kullanıcıya uzun yönergeler sunmak yerine, yetki dahilinde doğrudan uç noktada çalışarak donanım, ağ ve sistem sorunlarını giderir.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-2 text-xs text-slate-200 mb-8 bg-black/30 p-3.5 rounded-xl border border-white/10 font-medium">
+                <span class="text-cyan-400 font-bold">Teşhis</span>
+                <span class="text-slate-600">→</span>
+                <span>Yetkilendirme</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-cyan-400 font-bold">İşlem</span>
+                <span class="text-slate-600">→</span>
+                <span>Doğrulama</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-emerald-400 font-bold">Sonuç</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-200">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Yazıcı Yapılandırması</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Wi-Fi ve Ağ Kurulumu</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>VPN Bağlantı Yönetimi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Microsoft 365 İşlemleri</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Yerel Windows ve macOS Desteği</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Kullanıcı Giriş / Çıkış İşlemleri</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-cyan-400"></i> <span>Şifre ve Erişim Yetkilendirme</span></div>
+              </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="lg:col-span-5 bg-slate-950/80 rounded-2xl p-6 border border-white/10 font-mono text-xs leading-relaxed text-slate-300 shadow-2xl">
+              <div class="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4 text-slate-400 text-[11px]">
+                <span>helpcenter-servisi // sistem-aksiyonu</span>
+                <span class="w-2 h-2 rounded-full bg-emerald-400 inline-block"></span>
+              </div>
+              <p class="text-cyan-400 mb-1.5">[GİRDİ] Kullanıcı yerel yazıcının çevrimdışı olduğunu bildirdi</p>
+              <p class="text-slate-400 mb-1">→ Yazdırma biriktiricisi durumu inceleniyor</p>
+              <p class="text-slate-400 mb-1">→ Sürücü bağlantı noktası ve IP eşleşmesi çözümleniyor</p>
+              <p class="text-slate-400 mb-1">→ Ağ yazdırma protokolü yeniden başlatılıyor</p>
+              <p class="text-slate-400 mb-3">→ Fiziksel test sayfası gönderiliyor</p>
+              <p class="text-white font-bold p-2.5 bg-cyan-500/10 border border-cyan-500/20 rounded-lg">[SONUÇ] Doğrulandı. İşlem tamamlandı.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. DATA CENTRE -->
+        <div id="data-centre" class="glass-panel rounded-3xl p-8 sm:p-12 transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7">
+              <div data-i18n="dc_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 text-xs font-semibold mb-4">
+                Ana Ticari Ürün · Uzman Mühendislik
+              </div>
+              <h3 class="text-3xl font-extrabold text-white mb-1">Data Centre</h3>
+              <p data-i18n="dc_sub" class="text-base text-indigo-200/90 font-medium mb-4">Şartnameden Teklife</p>
+              <p data-i18n="dc_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                Haftalar süren teknik mühendislik ve ticari teklif süreçlerini tek bir çalışma alanında birleştirir. Şartnameleri analiz eder, çok markalı sistemleri boyutlandırır, keşif/maliyet tabloları ve AutoCAD çizimleri üretir.
+              </p>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-200 mb-6">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_1">Şartname Analizi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_2">Teklif Üretimi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_3">Çok Markalı Yapılandırma</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_4">3 Alternatif Çözüm</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_5">Maliyet Hesaplama</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_6">Teknik Dokümantasyon</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_7">AutoCAD Çizimi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-indigo-400"></i> <span data-i18n="dc_cap_8">Çok Dilli Çıktı</span></div>
+              </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="lg:col-span-5 bg-slate-950/80 rounded-2xl p-6 border border-white/10 font-mono text-xs leading-relaxed text-slate-300 ">
+              <div class="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4 text-slate-400 text-[11px]">
+                <span data-i18n="dc_mock_header">dc-motoru // sartname-hatti</span>
+                <span data-i18n="dc_mock_badge" class="text-indigo-400 font-semibold">STANDARTLARA UYGUN</span>
+              </div>
+              <p data-i18n="dc_mock_input" class="text-indigo-400 mb-1.5">[GİRDİ] İhale Teknik Şartname Dokümanı</p>
+              <p data-i18n="dc_mock_step1" class="text-slate-400 mb-1">→ Yük ve iklimlendirme gereksinimleri analiz ediliyor</p>
+              <p data-i18n="dc_mock_step2" class="text-slate-400 mb-1">→ Çok markalı üretici ekipmanları eşleştiriliyor</p>
+              <p data-i18n="dc_mock_step3" class="text-slate-400 mb-1">→ 3 alternatif mimari çözüm oluşturuluyor</p>
+              <p data-i18n="dc_mock_step4" class="text-emerald-400 mb-3">→ Keşif tablosu ve AutoCAD DWG yerleşimi hazırlanıyor</p>
+              <p data-i18n="dc_mock_result" class="text-white font-bold p-2.5 bg-indigo-500/10 border border-indigo-500/20 rounded-lg">[SONUÇ] Anahtar teslim teknik dokümantasyon üretildi.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. COST SAVING -->
+        <div id="cost-saving" class="glass-panel rounded-3xl p-8 sm:p-12 transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7">
+              <div data-i18n="cs_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-xs font-semibold mb-4">
+                Ana Ticari Ürün · Finansal Zekâ
+              </div>
+              <h3 class="text-3xl font-extrabold text-white mb-1">Cost Saving</h3>
+              <p data-i18n="cs_sub" class="text-base text-emerald-200/90 font-medium mb-4">Operasyonlarınızdaki tasarruf fırsatlarını ortaya çıkaran yapay zekâ.</p>
+              <p data-i18n="cs_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                Cost Saving, operasyonel ve finansal verileri analiz ederek somut ve ölçülebilir tasarruf alanlarını belirler. Yüzeysel tavsiyeler yerine bütçedeki net etkiyi hesaplar ve uygulanabilir aksiyon planına dönüştürür.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-2 text-xs text-slate-200 mb-8 bg-black/30 p-3.5 rounded-xl border border-white/10 font-medium">
+                <span data-i18n="cs_step_data" class="text-emerald-400 font-bold">Veri</span>
+                <span class="text-slate-600">→</span>
+                <span data-i18n="cs_step_detection">Tespit</span>
+                <span class="text-slate-600">→</span>
+                <span data-i18n="cs_step_validation" class="text-emerald-400 font-bold">Doğrulama</span>
+                <span class="text-slate-600">→</span>
+                <span data-i18n="cs_step_impact">Finansal Etki</span>
+                <span class="text-slate-600">→</span>
+                <span data-i18n="cs_step_action" class="text-cyan-400 font-bold">Aksiyon</span>
+              </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="lg:col-span-5 bg-slate-950/80 rounded-2xl p-6 border border-white/10 font-mono text-xs leading-relaxed text-slate-300 ">
+              <div class="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4 text-slate-400 text-[11px]">
+                <span data-i18n="cs_mock_header">cost-saving // operasyonel-analiz</span>
+                <span data-i18n="cs_mock_badge" class="text-emerald-400 font-semibold">ÖLÇÜLEBİLİR</span>
+              </div>
+              <p data-i18n="cs_mock_input" class="text-emerald-400 mb-1.5">[VERİ] Operasyonel harcama kayıtları inceleniyor</p>
+              <p data-i18n="cs_mock_step1" class="text-slate-400 mb-1">→ Sözleşme sapmaları ve atıl lisanslar tespit ediliyor</p>
+              <p data-i18n="cs_mock_step2" class="text-slate-400 mb-1">→ Fatura tutarsızlıkları kural bazlı doğrulanıyor</p>
+              <p data-i18n="cs_mock_step3" class="text-emerald-400 mb-3">→ Bütçeye net finansal etki hesaplanıyor</p>
+              <p data-i18n="cs_mock_result" class="text-white font-bold p-2.5 bg-emerald-500/10 border border-emerald-500/20 rounded-lg">[SONUÇ] Uygulama planı incelemeye hazırlandı.</p>
+            </div>
+          </div>
+        </div>
+
+                <!-- 4. HOW MUCH -->
+        <div id="how-much" class="glass-panel rounded-3xl p-8 sm:p-12 transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7">
+              <div data-i18n="hm_tag" class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-purple-500/10 border border-purple-500/20 text-purple-400 text-xs font-semibold mb-4">
+                AI COS Labs · Değerleme Zekâsı
+              </div>
+              <h3 class="text-3xl font-extrabold text-white mb-1">How Much</h3>
+              <p data-i18n="hm_sub" class="text-base text-purple-200/90 font-medium mb-4">Gerçek değerini bilin.</p>
+              <p data-i18n="hm_desc" class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                Dağınık piyasa verilerini yapılandırılmış değerleme zekâsına dönüştürür. Ticari gayrimenkul, personel bordro dengeleri, kurumsal tedarik sözleşmeleri, sigorta poliçeleri ve varlık alımlarında şeffaf, tarafsız ve doğrulanabilir adil piyasa değeri sunar.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-2 text-xs text-slate-200 mb-8 bg-black/30 p-3.5 rounded-xl border border-white/10 font-medium">
+                <span class="text-purple-400 font-bold">Piyasa Verisi</span>
+                <span class="text-slate-600">→</span>
+                <span>Model Analizi</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-purple-400 font-bold">Çapraz Eşleme</span>
+                <span class="text-slate-600">→</span>
+                <span>Sapma Tespiti</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-emerald-400 font-bold">Adil Değer</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-200">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>Ticari Gayrimenkul</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>Bordro & Maaş Skalası</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>Tedarik Sözleşmeleri</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>Sigorta ve Risk Primleri</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>BT Ekipman & Lisans Değeri</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-purple-400"></i> <span>Şirket Birleşme / Varlık Değerleme</span></div>
+              </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="lg:col-span-5 bg-slate-950/80 rounded-2xl p-6 border border-white/10 font-mono text-xs leading-relaxed text-slate-300 ">
+              <div class="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4 text-slate-400 text-[11px]">
+                <span>howmuch-engine // piyasa-degerleme</span>
+                <span class="text-purple-400 font-semibold uppercase">ADİL PİYASA VERİSİ</span>
+              </div>
+              <p class="text-purple-400 mb-1.5">[GİRDİ] Kurumsal Hizmet Alım Sözleşmesi & Portföy</p>
+              <p class="text-slate-400 mb-1">→ Bölgesel ve sektörel endeks verileri taranıyor</p>
+              <p class="text-slate-400 mb-1">→ Benzer işlem geçmişleri ve çarpanlar normalize ediliyor</p>
+              <p class="text-slate-400 mb-1">→ Fiyat anomalileri ve risk payları ayrıştırılıyor</p>
+              <p class="text-emerald-400 mb-3">→ %95 güven aralığında adil fiyat bandı oluşturuluyor</p>
+              <p class="text-white font-bold p-2.5 bg-purple-500/10 border border-purple-500/20 rounded-lg">[SONUÇ] Adil Değer Raporu ve Sapma Tablosu teslim edildi.</p>
+            </div>
+          </div>
+        </div>
+      
+
+        <!-- 5. KGK -->
+        <div id="kgk" class="glass-panel rounded-3xl p-8 sm:p-12 transition-all">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            <div class="lg:col-span-7">
+              <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-amber-500/10 border border-amber-500/20 text-amber-400 text-xs font-semibold mb-4">
+                Kritik Güç Sistemleri · Altyapı Zekâsı
+              </div>
+              <h3 class="text-3xl font-extrabold text-white mb-1">KGK</h3>
+              <p class="text-base text-amber-200/90 font-medium mb-4">Kesintisiz Güç & Altyapı Boyutlandırma</p>
+              <p class="text-xs sm:text-sm text-slate-300 leading-relaxed mb-6 font-normal">
+                Kritik tesisler, veri merkezleri ve endüstriyel operasyonlar için kesintisiz güç kaynağı (UPS), akü otonomisi ve jeneratör senkronizasyonunu mühendislik standartlarına göre otonom olarak hesaplar, boyutlandırır ve projelendirir.
+              </p>
+
+              <div class="flex flex-wrap items-center gap-2 text-xs text-slate-200 mb-8 bg-black/30 p-3.5 rounded-xl border border-white/10 font-medium">
+                <span class="text-amber-400 font-bold">Güç & Yük</span>
+                <span class="text-slate-600">→</span>
+                <span>Topoloji</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-amber-400 font-bold">Akü Boyutlandırma</span>
+                <span class="text-slate-600">→</span>
+                <span>Tek Hat Şeması</span>
+                <span class="text-slate-600">→</span>
+                <span class="text-emerald-400 font-bold">Kesintisiz Enerji</span>
+              </div>
+
+              <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 text-xs text-slate-200">
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>Kritik Yük Analizi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>Akü Otonomi Hesabı</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>Modüler / Monolitik Seçimi</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>N+1 / 2N Yedeklilik</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>Tek Hat (SLD) Şemaları</span></div>
+                <div class="flex items-center gap-2"><i data-lucide="check" class="w-3.5 h-3.5 text-amber-400"></i> <span>TCO ve Verimlilik Raporu</span></div>
+              </div>
+            </div>
+
+            <!-- TERMINAL -->
+            <div class="lg:col-span-5 bg-slate-950/80 rounded-2xl p-6 border border-white/10 font-mono text-xs leading-relaxed text-slate-300 ">
+              <div class="flex items-center justify-between pb-3.5 border-b border-white/10 mb-4 text-slate-400 text-[11px]">
+                <span>kgk-engine // guc-boyutlandirma</span>
+                <span class="text-amber-400 font-semibold uppercase">STANDART: TS EN 50600 / TIER</span>
+              </div>
+              <p class="text-amber-400 mb-1.5">[GİRDİ] Kritik Yük Profili & Otonomi Talebi (400 kVA, 15 dk)</p>
+              <p class="text-slate-400 mb-1">→ Harmonik bozulma (THDi) ve güç faktörü optimize ediliyor</p>
+              <p class="text-slate-400 mb-1">→ VRLA / Li-Ion akü deşarj eğrileri simüle ediliyor</p>
+              <p class="text-slate-400 mb-1">→ 2N yedekli paralel konfigürasyon hesaplanıyor</p>
+              <p class="text-emerald-400 mb-3">→ Dağıtım panosu tek hat şeması ve kablo kesitleri üretiliyor</p>
+              <p class="text-white font-bold p-2.5 bg-amber-500/10 border border-amber-500/20 rounded-lg">[SONUÇ] Kesintisiz Güç Mimarisi ve Keşif Listesi doğrulandı.</p>
+            </div>
+          </div>
+        </div>
+</div>
+    </div>
+  </section>
+
+  <!-- PHILOSOPHY / MATRIX -->
+  <section id="philosophy" class="py-28 border-b border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="text-center max-w-2xl mx-auto mb-16">
+        <span data-i18n="matrix_label" class="text-xs uppercase tracking-wider text-cyan-400 font-bold">Bütünleşik Mimari</span>
+        <h2 data-i18n="matrix_title" class="text-3xl sm:text-4xl font-extrabold tracking-tight text-white mt-2 mb-4">
+          Farklı sektörler. Tek felsefe.
+        </h2>
+        <p data-i18n="matrix_subtitle" class="text-xs sm:text-sm text-slate-300">
+          Ürünlerimizin tümü aynı doğrulanabilir iş akışının sektörel uygulamalarıdır.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto glass-panel rounded-3xl p-6">
+        <table class="w-full text-left text-xs border-collapse min-w-[700px]">
+          <thead>
+            <tr class="border-b border-white/10 text-slate-400 uppercase font-bold tracking-wider">
+              <th data-i18n="tbl_col_product" class="py-4 px-6">Ürün</th>
+              <th data-i18n="tbl_col_understand" class="py-4 px-6 text-cyan-400">Anla</th>
+              <th data-i18n="tbl_col_decide" class="py-4 px-6 text-blue-400">Karar Ver</th>
+              <th data-i18n="tbl_col_execute" class="py-4 px-6 text-purple-400">Uygula</th>
+              <th data-i18n="tbl_col_verify" class="py-4 px-6 text-emerald-400">Doğrula</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-white/5 text-slate-200 font-medium">
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">Help Center</td>
+              <td data-i18n="tbl_hc_u" class="py-4 px-6">BT Sorun Bağlamı</td>
+              <td data-i18n="tbl_hc_d" class="py-4 px-6">Çözüm Yolu</td>
+              <td data-i18n="tbl_hc_e" class="py-4 px-6 text-purple-300">Uç Nokta İşlemi</td>
+              <td data-i18n="tbl_hc_v" class="py-4 px-6 text-emerald-400">Gerçek Sistem Testi</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">Data Centre</td>
+              <td data-i18n="tbl_dc_u" class="py-4 px-6">Şartname Detayları</td>
+              <td data-i18n="tbl_dc_d" class="py-4 px-6">Mühendislik Boyutlandırması</td>
+              <td data-i18n="tbl_dc_e" class="py-4 px-6 text-purple-300">Teklif ve Keşif Tablosu</td>
+              <td data-i18n="tbl_dc_v" class="py-4 px-6 text-emerald-400">Teknik Çıktı ve CAD</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">Cost Saving</td>
+              <td data-i18n="tbl_cs_u" class="py-4 px-6">Operasyonel Veri</td>
+              <td data-i18n="tbl_cs_d" class="py-4 px-6">Tasarruf Fırsatı</td>
+              <td data-i18n="tbl_cs_e" class="py-4 px-6 text-purple-300">Uygulama Planı</td>
+              <td data-i18n="tbl_cs_v" class="py-4 px-6 text-emerald-400">Finansal Etki Doğrulaması</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">How Much</td>
+              <td data-i18n="tbl_hm_u" class="py-4 px-6">Piyasa Bilgisi</td>
+              <td data-i18n="tbl_hm_d" class="py-4 px-6">Değerleme Modeli</td>
+              <td data-i18n="tbl_hm_e" class="py-4 px-6 text-purple-300">Analiz ve Karşılaştırma</td>
+              <td data-i18n="tbl_hm_v" class="py-4 px-6 text-emerald-400">Adil Fiyat Doğrulaması</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">KGK</td>
+              <td class="py-4 px-6">Güç ve Yük Profili</td>
+              <td class="py-4 px-6">Topoloji ve Akü Boyutlandırma</td>
+              <td class="py-4 px-6 text-purple-300">Kesintisiz Güç Mimarisi & SLD</td>
+              <td class="py-4 px-6 text-emerald-400">Çalışma Süresi & Yük Doğrulaması</td>
+            </tr>
+            <tr class="hover:bg-white/5 transition-colors">
+              <td class="py-4 px-6 font-bold text-white">KGK</td>
+              <td class="py-4 px-6">Güç ve Yük Profili</td>
+              <td class="py-4 px-6">Topoloji ve Akü Boyutlandırma</td>
+              <td class="py-4 px-6 text-purple-300">Kesintisiz Güç Mimarisi & SLD</td>
+              <td class="py-4 px-6 text-emerald-400">Çalışma Süresi & Yük Doğrulaması</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROOF -->
+    <!-- PROOF SECTION -->
+  <section id="proof" class="py-32 border-b border-white/5 relative">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="mb-16 text-center max-w-3xl mx-auto">
+        <p data-i18n="proof_tag" class="text-xs uppercase tracking-widest text-emerald-400 font-bold mb-3">DOĞRULANABİLİR SONUÇLAR</p>
+        <h2 data-i18n="proof_title" class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">Gerçek iş için üretildi.</h2>
+        <p data-i18n="proof_desc" class="text-base text-slate-300 mx-auto font-normal">Tahmini ve yapay açıklamalar yerine doğrulanabilir, somut sistem çıktıları üretiyoruz.</p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="glass-panel p-8 rounded-3xl">
+          <div class="text-xs text-cyan-400 mb-2 font-bold uppercase tracking-wider">Help Center</div>
+          <h4 class="text-lg font-bold text-white mb-4">Uç Nokta Doğrulaması</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li>• Uç noktada doğrudan işlem yürütme</li>
+            <li>• Gerçek yazıcı kurulumu ve test çıktısı alma</li>
+            <li>• Yerel Windows ve macOS operasyonları</li>
+            <li>• Uç nokta ağ ve sistem yapılandırması</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl">
+          <div class="text-xs text-indigo-400 mb-2 font-bold uppercase tracking-wider">Data Centre</div>
+          <h4 class="text-lg font-bold text-white mb-4">Mühendislik Çıktıları</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li>• Gerçek şartname analizi</li>
+            <li>• Çok markalı teklif dokümantasyonu</li>
+            <li>• Malzeme listesi ve maliyet hesaplaması</li>
+            <li>• AutoCAD teknik çizim çıktısı</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl">
+          <div class="text-xs text-emerald-400 mb-2 font-bold uppercase tracking-wider">Cost Saving</div>
+          <h4 class="text-lg font-bold text-white mb-4">Denetlenebilir Finansal Etki</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li>• Gerçek operasyonel veri setleri</li>
+            <li>• Belirlenen net tasarruf fırsatları</li>
+            <li>• Doğrulanmış bütçe etkisi</li>
+            <li>• Somut uygulama yol haritası</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl">
+          <div class="text-xs text-purple-400 mb-2 font-bold uppercase tracking-wider">How Much</div>
+          <h4 class="text-lg font-bold text-white mb-4">Adil Değer Zekâsı</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li>• Şeffaf ve karşılaştırılabilir piyasa verisi</li>
+            <li>• Kurumsal sözleşme ve varlık değerleme bandı</li>
+            <li>• Fiyat anomali ve risk primi tespiti</li>
+            <li>• Doğrulanmış adil piyasa ekspertiz raporu</li>
+          </ul>
+        </div>
+
+        <div class="glass-panel p-8 rounded-3xl">
+          <div class="text-xs text-amber-400 mb-2 font-bold uppercase tracking-wider">KGK</div>
+          <h4 class="text-lg font-bold text-white mb-4">Kritik Güç Doğrulaması</h4>
+          <ul class="space-y-3 text-xs text-slate-300">
+            <li>• Gerçek yük profili ve akü deşarj simülasyonu</li>
+            <li>• N+1 / 2N yedekli kesintisiz güç mimarisi</li>
+            <li>• Tek hat (SLD) ve pano yerleşim çizimleri</li>
+            <li>• Standartlara uygun (TS EN 50600) altyapı teslimi</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- CONTACT / DEMO -->
+  <section id="contact" class="py-28">
+    <div class="max-w-3xl mx-auto px-6">
+      <div class="text-center mb-12">
+        <h2 data-i18n="contact_title" class="text-3xl font-extrabold tracking-tight text-white">İletişime Geçin</h2>
+        <p data-i18n="contact_subtitle" class="text-xs sm:text-sm text-slate-300 mt-2 font-medium">AI COS ile doğrudan iletişime geçin.</p>
+        <div class="mt-4 inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg glass-badge text-xs text-slate-200">
+          <span data-i18n="contact_email_label" class="text-slate-400">Resmi İletişim:</span>
+          <a href="mailto:info@aicos.com.tr" class="text-cyan-400 hover:underline font-semibold">info@aicos.com.tr</a>
+        </div>
+      </div>
+
+      <form onsubmit="handleFormSubmit(event)" class="glass-panel p-8 sm:p-10 rounded-3xl space-y-6">
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label data-i18n="form_email_label" class="block text-xs font-semibold text-slate-300 mb-2">Kurumsal E-posta</label>
+            <input type="email" id="contact-email" required data-i18n-placeholder="form_email_placeholder" placeholder="yonetici@sirket.com" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 transition-colors">
+          </div>
+          <div>
+            <label data-i18n="form_product_label" class="block text-xs font-semibold text-slate-300 mb-2">İlgilenilen Ürün</label>
+            <select id="contact-product" class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 cursor-pointer text-xs">
+              <option value="Help Center">Help Center</option>
+              <option value="Data Centre">Data Centre</option>
+              <option value="Cost Saving">Cost Saving</option>
+              <option value="How Much">How Much</option>
+              <option value="KGK">KGK</option>
+              <option value="KGK">KGK</option>
+              <option value="Investor Relations">Yatırımcı İlişkileri (AI COS)</option>
+            </select>
+          </div>
+        </div>
+
+        <div>
+          <label data-i18n="form_scope_label" class="block text-xs font-semibold text-slate-300 mb-2">Kurumsal İhtiyaç ve Kapsam</label>
+          <textarea id="contact-scope" rows="3" data-i18n-placeholder="form_scope_placeholder" placeholder="İncelemek istediğiniz ortam veya teknik değerlendirme kapsamını kısaca belirtin..." class="w-full bg-slate-900/60 border border-white/10 rounded-xl px-4 py-3 text-sm text-white focus:outline-none focus:border-cyan-400 text-xs"></textarea>
+        </div>
+
+        <button type="submit" data-i18n="form_submit" class="w-full py-4 bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-400 hover:to-blue-500 text-white font-bold text-xs rounded-xl transition-all shadow-lg shadow-cyan-500/25 uppercase tracking-wider">
+          Talebi Gönder
+        </button>
+      </form>
+    </div>
   </section>
 
   <!-- FOOTER -->
-  <footer id="about" class="mt-auto py-10 px-8 border-t border-slate-900 bg-slate-950/80 text-xs text-slate-500">
-    <div class="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
-      <p class="font-medium text-slate-400">AI COS — From Intelligence to Execution</p>
-      <div class="flex items-center gap-6">
-        <a href="mailto:info@aicos.com.tr" class="hover:text-slate-300 transition-colors">info@aicos.com.tr</a>
-        <a href="mailto:demo@aicos.com.tr" class="hover:text-slate-300 transition-colors">demo@aicos.com.tr</a>
-        <a href="mailto:invest@aicos.com.tr" class="hover:text-amber-400 transition-colors">invest@aicos.com.tr</a>
+  <footer class="py-12 border-t border-white/10 text-xs text-slate-400">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-6">
+      <div class="flex items-center gap-3">
+        <span class="font-extrabold text-white text-sm">AI COS</span>
+        <span class="text-slate-300">— From Intelligence to Execution.</span>
       </div>
-      <p>© 2026 AI COS. All Rights Reserved.</p>
+      <div class="flex items-center gap-6">
+        <a href="mailto:info@aicos.com.tr" class="hover:text-white transition-colors">info@aicos.com.tr</a>
+        <span data-i18n="footer_rights">AI Company Operating System. Tüm Hakları Saklıdır.</span>
+      </div>
     </div>
   </footer>
 
+  <script src="translations.js"></script>
+  <script>
+    lucide.createIcons();
+
+    function changeLanguage(lang) {
+      const selected = translations[lang] || translations['tr'];
+      
+      document.querySelectorAll('[data-i18n]').forEach(el => {
+        const key = el.getAttribute('data-i18n');
+        if (selected && selected[key]) {
+          el.innerText = selected[key];
+        }
+      });
+
+      document.querySelectorAll('[data-i18n-placeholder]').forEach(el => {
+        const key = el.getAttribute('data-i18n-placeholder');
+        if (selected && selected[key]) {
+          el.setAttribute('placeholder', selected[key]);
+        }
+      });
+
+      if (lang === 'ar') {
+        document.documentElement.setAttribute('dir', 'rtl');
+      } else {
+        document.documentElement.setAttribute('dir', 'ltr');
+      }
+    }
+
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      const email = document.getElementById('contact-email').value;
+      const product = document.getElementById('contact-product').value;
+      const scope = document.getElementById('contact-scope').value;
+      
+      const subject = encodeURIComponent(`Kurumsal Talep [${product}]: ${email}`);
+      const body = encodeURIComponent(`Ürün: ${product}\nKurumsal E-posta: ${email}\n\nKapsam:\n${scope}`);
+      window.location.href = `mailto:info@aicos.com.tr?subject=${subject}&body=${body}`;
+    }
+  </script>
 </body>
 </html>

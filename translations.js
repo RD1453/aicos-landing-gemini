@@ -8,7 +8,7 @@ const translations = {
     nav_contact: "İletişim",
     btn_demo: "Demo Talep Et",
     btn_invest: "Bize Yatırım Yap",
-    hero_title: "İşi gerçekten tamamlayan<br>yapay zekâ.",
+    hero_title: "Yapay zekâ konuşmayı öğrendi; şimdi iş yapma zamanı.",
     hero_desc: "Yalnızca soruları yanıtlayan değil; işi anlayan, doğrudan uygulayan ve ölçülebilir sonuçlar teslim eden uzmanlaşmış yapay zekâ sistemleri geliştiriyoruz.",
     btn_explore: "Ürünlerimizi Keşfedin",
     btn_how: "Nasıl Çalışır?",
